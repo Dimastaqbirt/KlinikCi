@@ -5,22 +5,24 @@
                 <?= $title ;?>
             </div>
             <div class="card-body">
-                <a href="<?= base_url('users'); ?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Kembali</a>
-                <form action="<?= base_url('users/update') ;?>" method="POST">
-                    <input type="hidden" name="id" value="<?= $u['id'] ;?>">
+                <a href="<?= base_url('pasien'); ?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Kembali</a>
+                <form action="<?= base_url('pasien/update') ;?>" method="POST">
+                    <input type="hidden" name="id" value="<?= $u['id_pasien'] ;?>">
                     <div class="form-group mb-2">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" class="form-control" value="<?= $u['username'] ;?>">
+                        <label for="nama_pasien" class="mb-2">nama Pasien</label>
+                        <input type="text" name="nama_pasien" class="form-control" value="<?= $u['nama_pasien'] ;?>">
                     </div>
                     <div class="form-group mb-2">
-                        <label for="nama_lengkap">Nama Lengkap</label>
-                        <input type="text" name="nama_lengkap" class="form-control" value="<?= $u['nama_lengkap'] ;?>">
+                        <label for="jenis_kelamin" class="mb-2">Jenis Kelamin</label>
+                        <select type="text" name="jenis_kelamin" class="form-control mb-2" value="<?= $u['jenis_kelamin'] ;?>">
+                            <option value="L">L</option>
+                            <option value="P">P</option>
+                        </select>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control" value="" placeholder="Kosongkan jika tidak merubah password">
+                        <label for="umur" class="mb-2">Umur</label>
+                        <input type="number" min="0" name="umur" class="form-control mb-2" value="<?= $u['umur'] ;?>">
                     </div>
-
                     <div class="form-group mb-2">
                         <button type="submit" class="btn btn-primary btn-sm">Update</button>
                     </div>
