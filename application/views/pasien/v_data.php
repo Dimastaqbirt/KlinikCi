@@ -8,7 +8,7 @@
                 <a href="<?= base_url('users/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah</a>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center">
-                        <thead class="">
+                        <thead class="biru-muda">
                             <tr>
                                 <th>No.</th>
                                 <th>Username</th>

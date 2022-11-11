@@ -5,26 +5,24 @@
                 <?= $title ;?>
             </div>
             <div class="card-body">
-                <a href="<?= base_url('users/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah</a>
+                <a href="<?= base_url('dokter/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah</a>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center">
                         <thead class="">
                             <tr>
                                 <th>No.</th>
-                                <th>Username</th>
-                                <th>Nama Lengkap</th>
+                                <th>Nama Dokter</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; foreach($users as $user) { ?>
+                            <?php $no=1; foreach($dokter as $user) { ?>
                                 <tr>
                                     <td class="text-center"><?= $no ;?></td>
-                                    <td><?= $user['username'] ;?></td>
-                                    <td><?= $user['nama_lengkap'] ;?></td>
+                                    <td><?= $user['nama_dokter'] ;?></td>
                                     <td>
-                                        <a href="<?= base_url().'users/edit/'.$user['id'] ;?>" class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="<?= base_url().'users/hapus/'.$user['id'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
+                                        <a href="<?= base_url().'dokter/edit/'.$user['id_dokter'] ;?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="<?= base_url().'dokter/hapus/'.$user['id_dokter'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
                                     </td>
                                 </tr>
                             <?php $no++; } ?>

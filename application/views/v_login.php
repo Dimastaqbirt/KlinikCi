@@ -59,9 +59,9 @@
                         <div class="d-flex justify-content-center mb-3">
                             <input class="btn btn-info text-light w-50 fw-bold border border-white" type="submit" value="Login">
                         </div>
-                        <div class="mt-3 text-center text-light ">
-                        <blockquote class="blockquote mb-0">
-                          <footer >Klinik Sehat Selalu</footer>
+                        <div class="mt-3 text-center text-light mt-5">
+                        <blockquote class="blockquote mb-4">
+                        <span class="text-light text-muted">Copyright &copy; 2022 Klinik Sehat Selalu</span>
                         </blockquote>
                         </div>
                     </form>

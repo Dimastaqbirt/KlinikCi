@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title><?= $title; ?></title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css')?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style1.css')?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
@@ -35,6 +35,7 @@
         .bg-biru-hitam{
             background-color: #212a46;
         }
+        
 
     </style>
 </head>
@@ -43,12 +44,15 @@
 <section id="nav">
     <nav class="navbar navbar-expand-lg navbar-dark bg-biru-banget">
     <div class="container">
-        <a class="navbar-brand me-4" href="#">KLINIK</a>
+        <a class="navbar-brand me-4" href="<?= base_url() ;?>">KLINIK</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-4">
+            <li class="nav-item me-4 ">
+                <a class="nav-link" href="<?= base_url() ;?>">Home</a>
+            </li>
             <li class="nav-item me-4 ">
                 <a class="nav-link" href="<?= base_url('kunjungan') ;?>">Kunjungan/Berobat</a>
             </li>
@@ -80,7 +84,7 @@
 
         <ul class="navbar-nav ms-auto">
             <li class="nav-item ms-auto">
-                <a href="<?= base_url('auth/logout') ;?>" class="nav-link btn btn-success fw-light text-white">Log Out</a>
+                <a href="<?= base_url('auth/logout') ;?>" class="nav-link btn btn-success btn-sm text-white">Log Out</a>
             </li>
         </ul>
         </div>

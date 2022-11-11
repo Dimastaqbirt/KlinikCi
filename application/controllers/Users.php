@@ -26,34 +26,59 @@ class Users extends CI_Controller {
         $data['title'] = 'Tambah Data User';
 
         $this->load->view('v_header',$data);
-		$this->load->view('users/v_tambah_data');
+		$this->load->view('users/v_data_tambah');
 		$this->load->view('v_footer');
     }
 
     public function insert(){
+        $u = $this->input->post('username');
+        $n = $this->input->post('nama_lengkap');
+        $p = md5($this->input->post('password'));
 
+        $data = array (
+            'username' => $u,
+            'nama_lengkap' => $n,
+            'password' => $p
+        );
+
+        $this->m_users->insert_data($data);
+
+        redirect('users');
     }
     
     public function edit($id){
         $data['title'] = 'Edit Data User';
+        $where = array ('id' => $id);
+        $data['u']= $this->m_users->edit_data($where)->row_array();
 
         $this->load->view('v_header',$data);
-        $this->load->view('users/v_edit_data',$data);
+        $this->load->view('users/v_data_edit',$data);
         $this->load->view('v_footer');
 }
 
-    public function update($id){
-        $data['title'] = 'update Data User';
+    public function update(){
+        $id = $this->input->post('id');
+        $u = $this->input->post('username');
+        $n = $this->input->post('nama_lengkap');
+        $p = md5($this->input->post('password'));
 
-        $this->load->view('v_header',$data);
-        $this->load->view('users/v_update_data',$data);
-        $this->load->view('v_footer');
+        $data = array (
+            'username' => $u,
+            'nama_lengkap' => $n,
+            'password' => $p
+        );
+
+        $where = array('id' => $id);
+
+        $this->m_users->update_data($data,$where);
+
+        redirect('users');
 }
+    public function hapus($id){
+        $where = array ('id' => $id);
+        $this->m_users->hapus_data($where);
 
-
-
-
-
-
+        redirect('users');
+    }
 
 }
