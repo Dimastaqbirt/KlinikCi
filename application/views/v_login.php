@@ -7,6 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <title><?= $title; ?></title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css')?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>">
@@ -17,16 +20,29 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .bg-biru {
+          background-color: #063970;
+        }
+        .bg-biru-banget {
+          background-color: #183153;
+        }
+        .bg-obat {
+            background-image: url("<?= base_url('assets/images/obat.png');?>") ;?>
+        }
+        body {
+          font-family: 'Poppins', sans-serif;
+        }
     </style>
 </head>
 <body>
 
 <div class="container-fluid">
     <div class="row vh-100">
-        <div class="col-lg-6 bg-primary">
+        <div class="col-lg-7 bg-biru ">
             <div class="row d-flex align-items-center vh-100 justify-content-center">
                 <div class="col-lg-7 mx-auto">
-                    <h1 class="text-center text-light">Halaman Login</h1>
+                  <h1 class="text-center mb-3 text-light text-lg fs-1" ><i class="fs-1 fa-solid fa-stethoscope"></i></h1>
+                  <h1 class="text-center text-light">Login</h1>
                     <form action="<?= base_url('auth/login_aksi')  ;?>" method="post">
                         <div class="form-group mb-3" >
                             <label class="mb-1 d-flex text-light" for="fname">Username</label>
@@ -40,14 +56,19 @@
                             <small class="text-warning  mt-2"><?= form_error('password') ;?></small>
 
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <input class="btn btn-info text-light" type="submit" value="Login">
+                        <div class="d-flex justify-content-center mb-3">
+                            <input class="btn btn-info text-light w-50 fw-bold border border-white" type="submit" value="Login">
+                        </div>
+                        <div class="mt-3 text-center text-light ">
+                        <blockquote class="blockquote mb-0">
+                          <footer >Klinik Sehat Selalu</footer>
+                        </blockquote>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 bg-custom d-none d-lg-block">
+        <div class="col-lg-5 bg-custom d-none d-lg-block">
         </div>
     </div>
 </div>
