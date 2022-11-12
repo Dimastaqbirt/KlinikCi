@@ -33,10 +33,24 @@ class Dokter extends CI_Controller {
     public function insert(){
         $nama = $this->input->post('nama_dokter');
 
-        $data = array (
-            'nama_dokter' => $nama
-        );
+            $config['max_size'] = 2048;
+            $config['allowed_types'] = 'jpg|png|jpeg|gif';
+            $config['remove_spaces'] = TRUE;
+            $config['overwrite'] = TRUE;
+            $config['upload_path'] = FCPATH.'assets/images';
+            
+            
+            $this->load->library('upload');
+            $this->upload->initialize($config);
+            $this->upload->do_upload('foto');
+            $data_image=$this->upload->data('file_name');
+            $location = 'assets/images/';
+            $foto =$location.$data_image;
 
+            $data = array(
+                'nama_dokter' => $nama,
+                'foto' => $foto
+                );
         $this->m_dokter->insert_data($data);
 
         redirect('dokter');
@@ -46,7 +60,6 @@ class Dokter extends CI_Controller {
         $data['title'] = 'Edit Data Dokter';
         $where = array ('id_dokter' => $id);
         $data['u']= $this->m_dokter->edit_data($where)->row_array();
-
         $this->load->view('v_header',$data);
         $this->load->view('dokter/v_data_edit',$data);
         $this->load->view('v_footer');
@@ -56,9 +69,24 @@ class Dokter extends CI_Controller {
         $id = $this->input->post('id_dokter');
         $nama = $this->input->post('nama_dokter');
 
-        $data = array (
-            'nama_dokter' => $nama
-        );
+            $config['max_size'] = 2048;
+            $config['allowed_types'] = 'jpg|png|jpeg|gif';
+            $config['remove_spaces'] = TRUE;
+            $config['overwrite'] = TRUE;
+            $config['upload_path'] = FCPATH.'assets/images';
+            
+            
+            $this->load->library('upload');
+            $this->upload->initialize($config);
+            $this->upload->do_upload('foto');
+            $data_image=$this->upload->data('file_name');
+            $location = 'assets/images/';
+            $foto =$location.$data_image;
+
+            $data = array(
+                'nama_dokter' => $nama,
+                'foto' => $foto
+                );
 
 
         $where = array('id_dokter' => $id);

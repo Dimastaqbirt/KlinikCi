@@ -33,3 +33,28 @@
         </div>
     </div>
 </section>
+
+
+<div class="container py-5">
+    <div class="row">
+        <?php $no=1; foreach($dokter as $user) { ?>
+        <div class="col-sm-3 mb-2">
+            <div class="card shadow">
+                <div class="card-body">
+                    
+                    <div class="row">
+                        <div class="col-md-12 text-center mb-2">
+                            <img src="<?php echo base_url();?><?php echo $user['foto']; ?>" class="img-fluid rounded" alt="foto"
+                            width="auto" height="auto">
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <h3><?= $user['nama_dokter'] ;?></h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <?php $no++; } ?>
+    </div>
+</div>
