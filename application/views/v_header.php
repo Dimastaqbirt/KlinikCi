@@ -20,6 +20,11 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .bg-custom-terbalik {
+            background-image: url("<?= base_url('assets/images/background.jpg');?>") ;?>
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         .bg-biru {
             background-color: #063970;
         }

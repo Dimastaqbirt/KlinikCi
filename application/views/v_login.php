@@ -41,8 +41,8 @@
         <div class="col-lg-7 bg-biru ">
             <div class="row d-flex align-items-center vh-100 justify-content-center">
                 <div class="col-lg-7 mx-auto">
-                  <h1 class="text-center mb-3 text-light text-lg fs-1" ><i class="fs-1 fa-solid fa-stethoscope"></i></h1>
-                  <h1 class="text-center text-light">Login</h1>
+                <h1 class="text-center mb-3 text-light text-lg fs-1" ><i class="fs-1 fa-solid fa-stethoscope"></i></h1>
+                <h1 class="text-center text-light">Login</h1>
                     <form action="<?= base_url('auth/login_aksi')  ;?>" method="post">
                         <div class="form-group mb-3" >
                             <label class="mb-1 d-flex text-light" for="fname">Username</label>
@@ -59,11 +59,11 @@
                         <div class="d-flex justify-content-center mb-3">
                             <input class="btn btn-info text-light w-50 fw-bold border border-white" type="submit" value="Login">
                         </div>
-                        <div class="mt-3 text-center text-light mt-5">
+                        <!-- <div class="mt-3 text-center text-light mt-5">
                         <blockquote class="blockquote mb-4">
                         <span class="text-light text-muted">Copyright &copy; 2022 Klinik Sehat Selalu</span>
                         </blockquote>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
             </div>
