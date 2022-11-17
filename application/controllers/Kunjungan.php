@@ -12,11 +12,10 @@ class Kunjungan extends CI_Controller {
         $this->load->model('m_kunjungan');
         $this->load->model('m_pasien');
         $this->load->model('m_dokter');
-        $this->load->model('m_obat');
     }
 	public function index()
 	{
-        $data['title'] = 'Kunjungan/Berobat';
+        $data['title'] = 'Manajemen Data kunjungan';
 
         $data['kunjungan'] = $this->m_kunjungan->tampil_data()->result_array();
 
@@ -26,11 +25,11 @@ class Kunjungan extends CI_Controller {
 	}
 
     public function tambah(){
-        $data['title'] = 'Pemeriksaan Baru';
-
-
-        $data['pasien'] = $this->m_pasien->tampil_data()->result_array();
+        $data['title'] = 'Kunjungan Baru';
         $data['dokter'] = $this->m_dokter->tampil_data()->result_array();
+        $data['pasien'] = $this->m_pasien->tampil_data()->result_array();
+
+
 
         $this->load->view('v_header',$data);
 		$this->load->view('kunjungan/v_data_tambah',$data);
@@ -38,14 +37,14 @@ class Kunjungan extends CI_Controller {
     }
 
     public function insert(){
-        $tgl = $this->input->post('tgl_berobat');
-        $pasien = $this->input->post('pasien');
-        $dokter = $this->input->post('dokter');
+        $nama_pasien = $this->input->post('nama_pasien');
+        $nama_dokter = $this->input->post('nama_dokter');
+        $tgl_berobat = $this->input->post('tgl_berobat');
 
         $data = array (
-            'tgl_berobat' => $tgl,
-            'id_pasien' => $pasien,
-            'id_dokter' => $dokter
+            'id_pasien' => $nama_pasien,
+            'id_dokter' => $nama_dokter,
+            'tgl_berobat' => $tgl_berobat
         );
 
         $this->m_kunjungan->insert_data($data);
@@ -54,33 +53,30 @@ class Kunjungan extends CI_Controller {
     }
     
     public function edit($id){
-        $data['title'] = 'Edit Data kunjungan';
+        $data['title'] = 'Edit Data Kunjungan';
         $where = array ('id_berobat' => $id);
         $data['u']= $this->m_kunjungan->edit_data($where)->row_array();
-        $data['pasien'] = $this->m_pasien->tampil_data()->result_array();
         $data['dokter'] = $this->m_dokter->tampil_data()->result_array();
+        $data['pasien'] = $this->m_pasien->tampil_data()->result_array();
 
         $this->load->view('v_header',$data);
         $this->load->view('kunjungan/v_data_edit',$data);
         $this->load->view('v_footer');
-        
-        $this->load->model('m_kunjungan');
-        $this->load->model('m_pasien');
-        $this->load->model('m_dokter');
 }
 
     public function update(){
-        $id = $this->input->post('id');
-        $tgl = $this->input->post('tgl_berobat');
-        $pasien = $this->input->post('pasien');
-        $dokter = $this->input->post('dokter');
+        $id = $this->input->post('id_berobat');
+        $nama_pasien = $this->input->post('nama_pasien');
+        $nama_dokter = $this->input->post('nama_dokter');
+        $tgl_berobat = $this->input->post('tgl_berobat');
 
-        
         $data = array (
-            'tgl_berobat' => $tgl,
-            'id_pasien' => $pasien,
-            'id_dokter' => $dokter
+            'id_pasien' => $nama_pasien,
+            'id_dokter' => $nama_dokter,
+            'tgl_berobat' => $tgl_berobat
         );
+
+
 
         $where = array('id_berobat' => $id);
 
@@ -96,33 +92,9 @@ class Kunjungan extends CI_Controller {
         redirect('kunjungan');
     }
 
-// fungsi rekam medis
-
-    public function rekam($id){
-        $data['title'] = "Rekam Medis";
-        //tampil detail rekam medis
-        $data['data'] = $this->m_kunjungan->tampil_rm($id)->row_array();
-
-        //tampil riwayat kunjungan
-        $q = $this->db->query("SELECT id_pasien FROM berobat WHERE id_berobat='$id'")->row_array();
-        $id_pasien = $q['id_pasien'];
-        $data['riwayat'] = $this->m_kunjungan->tampil_riwayat($id_pasien)->result_array();
-        
-        //tampil data obat combo box
-        $data['obat'] = $this->m_obat->tampil_data()->result_array();
-
-        // tampil resep obat
-        $data['resep'] = $this->m_kunjungan->tampil_resep($id)->result_array();
 
 
 
-        
-        $this->load->view('v_header',$data);
-        $this->load->view('kunjungan/v_rekam_medis',$data);
-        $this->load->view('v_footer');
-
-    }
-
-
+    
 
 }

@@ -5,9 +5,8 @@
                 <?= $title ;?>
             </div>
             <div class="card-body">
-                <a href="<?= base_url('kunjungan/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">
-                    Pemeriksaan Baru
-                </a>
+                <a href="<?= base_url('pasien/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah Pasien Baru</a>
+                <a href="<?= base_url('kunjungan/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah Kunjungan Baru</a>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center">
                         <thead class="biru-muda">
@@ -16,7 +15,7 @@
                                 <th>Tanggal</th>
                                 <th>Nama Pasien</th>
                                 <th>Umur</th>
-                                <th>Dokter Yang Menangani</th>
+                                <th>Dokter</th>
                                 <th>Rekam Medis</th>
                                 <th>Aksi</th>
                             </tr>
@@ -30,9 +29,7 @@
                                     <td><?= $user['umur'] ;?></td>
                                     <td><?= $user['nama_dokter'] ;?></td>
                                     <td>
-                                        <a href="<?= base_url().'kunjungan/rekam/'.$user['id_berobat'] ;?>" class="btn btn-success btn-sm">
-                                            Rekam
-                                        </a>
+                                        <a href="<?= base_url() ;?>'kunjungan/rekam/'<?= $user['id_berobat'] ;?>" class="btn btn-success btn-sm">Rekam</a>
                                     </td>
                                     <td>
                                         <a href="<?= base_url().'kunjungan/edit/'.$user['id_berobat'] ;?>" class="btn btn-warning btn-sm">Edit</a>

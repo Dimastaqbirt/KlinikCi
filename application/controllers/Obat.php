@@ -21,7 +21,7 @@ class Obat extends CI_Controller {
 		$this->load->view('obat/v_data',$data);
 		$this->load->view('v_footer');
 	}
-
+ 
     public function tambah(){
         $data['title'] = 'Tambah Data obat';
 

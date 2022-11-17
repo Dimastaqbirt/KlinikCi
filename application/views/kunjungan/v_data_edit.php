@@ -7,52 +7,41 @@
             <div class="card-body">
                 <a href="<?= base_url('kunjungan'); ?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Kembali</a>
                 <form action="<?= base_url('kunjungan/update') ;?>" method="POST">
-                    <input type="hidden" name="id" value="<?= $u['id_berobat'] ;?>">
+                <input type="hidden" name="id_berobat" value="<?= $u['id_berobat'] ;?>">
                     <div class="form-group mb-2">
-                        <label for="dokter">Tanggal Berobat</label>
-                        <input type="date" name="tgl_berobat" class="form-control" value="<?= $u['tgl_berobat'] ;?>" required>
+                        <label for="tgl">Tanggal Berobat</label>
+                        <input type="date" id="tgl" name="tgl_berobat" class="form-control" value="<?= $u['tgl_berobat'] ;?>" required>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="">Pasien</label>
-                        <select name="pasien" class="form-control" id="" required>
-                                <?php 
-                                foreach($pasien as $p) {
-                                if($p['id_pasien']== $u['id_berobat']){
-                                    $aktif = "selected";
+                        <label for="pasien">Nama Pasien</label>
+                        <select name="nama_pasien" id="pasien" class="form-control mb-2">
+                            <?php foreach($pasien as $p) :
+                                if($p['id_pasien']==$u['id_pasien']) {
+                                    $aktif = 'selected';
                                 } else {
-                                    $aktif = "";
-
+                                    $aktif = '';
                                 }
-                                ?>
-                                    <option value="<?= $p['id_pasien'] ;?>" <?= $aktif ;?>>
-                                        <?= $p['nama_pasien'] ;?>
-                                    </option>
-
-                                <?php } ;?>
+                                ;?>
+                                <option value="<?= $p['id_pasien'] ;?>"<?= $aktif ;?>><?= $p['nama_pasien'] ;?></option>
+                                <?php  endforeach;?>
                         </select>
                     </div>
                     <div class="form-group mb-2">
-                        <label for="dokter">Dokter Yang Menangani</label>
-                        <select name="dokter" class="form-control" id="" required>
-                        <?php 
-                                foreach($dokter as $p) {
-                                if($p['id_dokter']== $u['id_berobat']){
-                                    $aktif = "selected";
+                        <label for="">Nama Dokter</label>
+                        <select name="nama_dokter" id="dokter" class="form-control mb-2">
+                            <?php foreach($dokter as $p) :
+                                if($p['id_dokter']==$u['id_dokter']) {
+                                    $aktif = 'selected';
                                 } else {
-                                    $aktif = "";
-
+                                    $aktif = '';
                                 }
-                                ?>
-                                    <option value="<?= $p['id_dokter'] ;?>" <?= $aktif ;?>>
-                                        <?= $p['nama_dokter'] ;?>
-                                    </option>
-
-                                <?php } ;?>
-                        </select>
+                                ;?>
+                                <option value="<?= $p['id_dokter'] ;?>"<?= $aktif ;?>><?= $p['nama_dokter'] ;?></option>
+                                <?php  endforeach;?>
+                            </select>
                     </div>
-
-                    <div class="form-group mb-2">
-                        <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                            <div class="form-group mb-2">
+                        <button type="submit" class="btn btn-primary btn-sm">Simpan Data</button>
                     </div>
                 </form>
             </div>

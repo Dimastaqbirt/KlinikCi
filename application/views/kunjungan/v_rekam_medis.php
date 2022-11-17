@@ -26,7 +26,7 @@
                                 if($data['jenis_kelamin'] == 'P'){
                                     echo "erempuan";
                                 } else {
-                                    echo "ali-Laki";
+                                    echo "aki-Laki";
                                 }?></td>
                             </tr>
                         </table>

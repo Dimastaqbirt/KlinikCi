@@ -22,7 +22,13 @@
                                 <tr>
                                     <td class="text-center"><?= $no ;?></td>
                                     <td><?= $user['nama_pasien'] ;?></td>
-                                    <td><?= $user['jenis_kelamin'] ;?></td>
+                                    <td><?= $user['jenis_kelamin'] ;
+                                    if($user['jenis_kelamin'] == 'P'){
+                                        echo "erempuan";
+                                    } else {
+                                        echo "aki-Laki";
+                                    }
+                                    ?></td>
                                     <td><?= $user['umur'] ;?></td>
                                     <td>
                                         <a href="<?= base_url().'pasien/edit/'.$user['id_pasien'] ;?>" class="btn btn-warning btn-sm">Edit</a>

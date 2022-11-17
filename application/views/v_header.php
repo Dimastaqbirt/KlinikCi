@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
         .bg-custom {
-            background-image: url("<?= base_url('assets/images/doctor-with-stethoscope-hands-hospital-background.jpg');?>") ;?>
+            background-image: url("<?= base_url('assets/images/doctor-with-stethoscope-hands-hospital-background.jpg');?>");
             background-repeat: no-repeat;
             background-size: cover;
         }
         .bg-custom-terbalik {
-            background-image: url("<?= base_url('assets/images/background.jpg');?>") ;?>
+            background-image: url("<?= base_url('assets/images/background.jpg');?>");
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -44,28 +44,28 @@
 
     </style>
 </head>
-<body>
+<body class="">
 
 <section id="nav">
     <nav class="navbar navbar-expand-lg navbar-dark bg-biru-banget">
+        <a class="navbar-brand me-2 mx-2" href="<?= base_url() ;?>"><h2><i class="fa-solid fa-hospital w-25 mx-3"></i>Klinik</h2></a>
     <div class="container">
-        <a class="navbar-brand me-4" href="<?= base_url() ;?>">KLINIK</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-4">
             <li class="nav-item me-4 ">
-                <a class="nav-link" href="<?= base_url() ;?>">Home</a>
+                <a class="nav-link active" href="<?= base_url() ;?>">Home</a>
             </li>
             <li class="nav-item me-4 ">
-                <a class="nav-link" href="<?= base_url('kunjungan') ;?>">Kunjungan/Berobat</a>
+                <a class="nav-link active" href="<?= base_url('kunjungan') ;?>">Kunjungan/Berobat</a>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Master Data
             </a>    
-            <ul class="dropdown-menu ">
+            <ul class="dropdown-menu active">
                 <li><a class="dropdown-item" href="<?= base_url('users') ;?>">Data User</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('dokter') ;?>">Data Dokter</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('pasien') ;?>">Data Pasien</a></li>
@@ -73,11 +73,11 @@
             </ul>
             </li>
 
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Laporan
             </a>    
-            <ul class="dropdown-menu me-4">
+            <ul class="dropdown-menu me-4 active">
                 <li><a class="dropdown-item" href="<?= base_url('laporan/data_dokter') ;?>">Data Dokter</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="<?= base_url('laporan/data_pasien') ;?>">Data Pasien</a></li>

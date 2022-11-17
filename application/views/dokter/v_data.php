@@ -35,8 +35,8 @@
 </section>
 
 
-<div class="container py-5">
-    <div class="row">
+<div class="container py-5 ">
+    <div class="row mb-4">
         <?php $no=1; foreach($dokter as $user) { ?>
         <div class="col-sm-3 mb-2">
             <div class="card shadow">
