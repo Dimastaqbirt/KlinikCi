@@ -29,7 +29,7 @@
                                     <td><?= $user['umur'] ;?></td>
                                     <td><?= $user['nama_dokter'] ;?></td>
                                     <td>
-                                        <a href="<?= base_url() ;?>'kunjungan/rekam/'<?= $user['id_berobat'] ;?>" class="btn btn-success btn-sm">Rekam</a>
+                                        <a href="<?= base_url() ;?>kunjungan/rekam/<?= $user['id_berobat'] ;?>" class="btn btn-success btn-sm">Rekam</a>
                                     </td>
                                     <td>
                                         <a href="<?= base_url().'kunjungan/edit/'.$user['id_berobat'] ;?>" class="btn btn-warning btn-sm">Edit</a>

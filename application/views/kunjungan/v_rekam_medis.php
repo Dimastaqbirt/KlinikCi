@@ -12,22 +12,27 @@
                             <tr>
                                 <th>Nama Pasien</th>
                                 <td>:</td>
-                                <td><?= $data['nama_pasien'] ;?></td>
+                                <td><?= $d['nama_pasien'] ;?></td>
                             </tr>
                             <tr>
                                 <th>Umur</th>
                                 <td>:</td>
-                                <td><?= $data['umur'] ;?></td>
+                                <td><?= $d['umur'] ;?></td>
+
                             </tr>
                             <tr>
                                 <th>Jenis Kelamin</th>
                                 <td>:</td>
-                                <td><?= $data['jenis_kelamin']  ;
-                                if($data['jenis_kelamin'] == 'P'){
-                                    echo "erempuan";
+                                <td><?= $d['jenis_kelamin'] ;
+                                if ($d['jenis_kelamin']== 'P') {
+                                    echo 'erempuan';
                                 } else {
-                                    echo "aki-Laki";
-                                }?></td>
+                                    echo 'ali-Laki';
+
+                                }
+                                ?></td>
+
+
                             </tr>
                         </table>
                     </div>
@@ -38,7 +43,41 @@
                         Riwayat Data Berobat
                     </div>
                     <div class="card-body">
-                        Data Riwayat Berobat
+                        <table class="table table-sm table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Tgl. Berobat</th>
+                                    <th>Keluhan</th>
+                                    <th>Diagnosa</th>
+                                    <th>Penatalaksanaan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php  
+                                $no=1;
+                                foreach ($riwayat as $r) :
+                                ;?>
+                                <tr>
+                                    <td>
+                                        <?= $no ;?>
+                                    </td>
+                                    <td>
+                                        <?= $r['tgl_berobat'] ;?>
+                                    </td>
+                                    <td>
+                                    <?= $r['keluhan'] ;?>
+                                    </td>
+                                    <td>
+                                    <?= $r['hasil_diagnosa'] ;?>
+                                    </td>
+                                    <td>
+                                    <?= $r['penatalaksanaan'] ;?>
+                                    </td>
+                                </tr>
+                                <?php  $no; endforeach?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -49,7 +88,31 @@
                         Catatan (Rekam Medis)
                     </div>
                     <div class="card-body">
-                        data pasien
+                        <form action="<?= base_url('kunjungan/insert_rm') ;?>" method="post" class="form-group">
+                        <input name="id" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_berobat'] ;?>">
+                        <div class="form-group mb-1" >
+                            <label for="keluhan" class="form-group">Keluhan</label>
+                            <textarea name="keluhan" id="keluhan"class="form-group d-flex" cols="65" rows="0"></textarea required>
+                        </div>
+                        <div class="form-group mb-1">
+                            <label for="">Diagnosa Dokter</label>
+                            <textarea name="diagnosa" class="form-group d-flex" cols="65" ></textarea required>
+                        </div>
+                        <div class="form-group mb-1">
+                            <label for="">Penatalaksanaan</label>
+                            <select name="penatalaksanaan" required class="form-group d-flex">
+                                <option value="Rawat Jalan">Rawat Jalan</option>
+                                <option value="Rawat Inap">Rawat Inap</option>
+                                <option value="Rujuk">Rujuk</option>
+                                <option value="Lainya">Lainya</option>
+                            </select >
+                        </div>
+                        <div class="form-group mb-1">
+                            <label for="">keterangan</label>
+                            <textarea name="keterangan" class="form-group d-flex" cols="65" ></textarea required>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-sm">Simpan</button>
+                        </form>
                     </div>
                 </div>
 
@@ -58,7 +121,50 @@
                         Resep Obat
                     </div>
                     <div class="card-body">
-                        Data Resep Obat
+                        <form action="<?= base_url('kunjungan/insert_resep');?>" method="post">
+                        <input name="id" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_berobat'] ;?>">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <select name="obat" id="" class="form-control">
+                                            <option value="">->pilih<-</option>
+                                            <?php foreach($obat as $p) {;?>
+                                                <option value="<?= $p['id_obat'] ;?>"><?= $p['nama_obat'] ;?></option>
+                                            <?php  };?>
+                                        </select>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <button class="btn btn-success" type="submit">+</button>
+                                    </div>
+                            </div>
+                        </form>
+
+                        <HR>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Nama Obat</th>
+                                    <th>#</th>
+                                </tr>
+                            </thead>
+                            <TBody>
+                                <?php $no=1; foreach($resep as $o) { ;?>
+                                <tr>
+                                    <td>
+                                        <?= $no ;?>
+                                    </td>
+                                    <td>
+                                        <?= $o['nama_obat'] ;?>
+                                    </td>
+                                    <td>
+                                        <a href="<?= base_url().'kunjungan/hapus_resep/'.$o['id_resep'].'/'.$o['id_berobat'] ;?>" class="text-danger">
+                                    </td>
+                                </tr>
+                                <?php $no++ ;} ?>
+                            </TBody>
+                        </table>
                     </div>
                 </div>  
             </div>

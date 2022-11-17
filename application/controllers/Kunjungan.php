@@ -12,6 +12,7 @@ class Kunjungan extends CI_Controller {
         $this->load->model('m_kunjungan');
         $this->load->model('m_pasien');
         $this->load->model('m_dokter');
+        $this->load->model('m_obat');
     }
 	public function index()
 	{
@@ -92,9 +93,31 @@ class Kunjungan extends CI_Controller {
         redirect('kunjungan');
     }
 
-
-
-
     
 
+
+ function rekam($id){
+    $data['title'] = 'Rekam medis';
+
+    $data['d']= $this->m_kunjungan->tampil_rm($id)->row_array();
+
+    $q=$this->db->query("SELECT id_pasien FROM berobat WHERE id_berobat='$id'")->row_array();
+
+    $id_pasien = $q['id_pasien'];
+    $data['riwayat'] = $this->m_kunjungan->tampil_riwayat($id_pasien)->result_array();
+
+    $data['obat']= $this->m_obat->tampil_data()->result_array();
+    $data['resep']= $this->m_kunjungan->tampil_resep($id)->result_array();
+
+
+
+
+
+
+
+
+    $this->load->view('v_header',$data);
+    $this->load->view('kunjungan/v_rekam_medis',$data);
+    $this->load->view('v_footer');
+ }
 }
