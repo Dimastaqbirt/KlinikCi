@@ -92,19 +92,24 @@
                         <input name="id" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_berobat'] ;?>">
                         <div class="form-group mb-1" >
                             <label for="keluhan" class="form-group">Keluhan</label>
-                            <textarea name="keluhan" id="keluhan"class="form-group d-flex" cols="65" rows="0"></textarea required>
+                            <textarea name="keluhan" id="keluhan"class="form-group d-flex" cols="65" rows="0"><?= $r['keluhan'] ;?></textarea required>
                         </div>
                         <div class="form-group mb-1">
                             <label for="">Diagnosa Dokter</label>
-                            <textarea name="diagnosa" class="form-group d-flex" cols="65" ></textarea required>
+                            <textarea name="diagnosa" class="form-group d-flex" cols="65" value="<?= $r['hasil_diagnosa'] ;?>"><?= $d['hasil_diagnosa'] ;?></textarea required>
                         </div>
                         <div class="form-group mb-1">
                             <label for="">Penatalaksanaan</label>
-                            <select name="penatalaksanaan" required class="form-group d-flex">
-                                <option value="Rawat Jalan">Rawat Jalan</option>
-                                <option value="Rawat Inap">Rawat Inap</option>
-                                <option value="Rujuk">Rujuk</option>
-                                <option value="Lainya">Lainya</option>
+                            <select name="penatalaksanaan" required class="form-group d-flex" >
+                            <?php if($d['id_berobat']==$r['id_berobat']){
+                                $aktif ='selected';
+                            } else {
+                                $aktif = '';
+                            };?>
+                                <option value="Rawat Jalan" <?= $aktif ;?>>Rawat Jalan</option>
+                                <option value="Rawat Inap" <?= $aktif ;?>>Rawat Inap</option>
+                                <option value="Rujuk" <?= $aktif ;?>>Rujuk</option>
+                                <option value="Lainya" <?= $aktif ;?>>Lainya</option>
                             </select >
                         </div>
                         <div class="form-group mb-1">
@@ -127,7 +132,6 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <select name="obat" id="" class="form-control">
-                                            <option value="">->pilih<-</option>
                                             <?php foreach($obat as $p) {;?>
                                                 <option value="<?= $p['id_obat'] ;?>"><?= $p['nama_obat'] ;?></option>
                                             <?php  };?>
@@ -146,7 +150,7 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>Nama Obat</th>
-                                    <th>#</th>
+                                    <th class="btn text-dark" > # </th>
                                 </tr>
                             </thead>
                             <TBody>
@@ -159,7 +163,9 @@
                                         <?= $o['nama_obat'] ;?>
                                     </td>
                                     <td>
-                                        <a href="<?= base_url().'kunjungan/hapus_resep/'.$o['id_resep'].'/'.$o['id_berobat'] ;?>" class="text-danger">
+                                        <a href="<?= base_url().'kunjungan/hapus_resep/'.$o['id_resep'].'/'.$o['id_berobat'] ;?>" value="" class="btn btn-sm text-danger">
+                                        x
+                                        </a>
                                     </td>
                                 </tr>
                                 <?php $no++ ;} ?>
