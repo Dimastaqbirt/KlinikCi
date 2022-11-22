@@ -11,6 +11,10 @@
                         <label for="nama_dokter">Nama Dokter</label>
                         <input type="text" name="nama_dokter" class="form-control" required>
                     </div>
+                    <div class="form-group mb-2">
+                        <label for="spesialis">Spesialis</label>
+                        <input type="text" name="spesialis" class="form-control" required>
+                    </div>
                     <div class="form-group mb-3">
                             <label for="foto" class="mb-1">Foto</label>
                             <input type="file" class="form-control" name="foto" id="foto">

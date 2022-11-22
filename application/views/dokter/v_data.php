@@ -12,6 +12,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Nama Dokter</th>
+                                <th>Spesialis</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -20,6 +21,7 @@
                                 <tr>
                                     <td class="text-center"><?= $no ;?></td>
                                     <td><?= $user['nama_dokter'] ;?></td>
+                                    <td><?= $user['spesialis'] ;?></td>
                                     <td>
                                         <a href="<?= base_url().'dokter/edit/'.$user['id_dokter'] ;?>" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="<?= base_url().'dokter/hapus/'.$user['id_dokter'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>

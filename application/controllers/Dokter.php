@@ -32,6 +32,7 @@ class Dokter extends CI_Controller {
 
     public function insert(){
         $nama = $this->input->post('nama_dokter');
+        $spesialis = $this->input->post('spesialis');
 
             $config['max_size'] = 2048;
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
@@ -49,7 +50,8 @@ class Dokter extends CI_Controller {
 
             $data = array(
                 'nama_dokter' => $nama,
-                'foto' => $foto
+                'foto' => $foto,
+                'spesialis' => $spesialis
                 );
         $this->m_dokter->insert_data($data);
 
@@ -68,6 +70,8 @@ class Dokter extends CI_Controller {
     public function update(){
         $id = $this->input->post('id_dokter');
         $nama = $this->input->post('nama_dokter');
+        $spesialis = $this->input->post('spesialis');
+
 
             $config['max_size'] = 2048;
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
@@ -85,7 +89,8 @@ class Dokter extends CI_Controller {
 
             $data = array(
                 'nama_dokter' => $nama,
-                'foto' => $foto
+                'foto' => $foto,
+                'spesialis' => $spesialis
                 );
 
 
