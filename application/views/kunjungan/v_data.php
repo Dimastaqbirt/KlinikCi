@@ -24,16 +24,16 @@
                             <?php $no=1; foreach($kunjungan as $user) { ?>
                                 <tr>
                                     <td class="text-center"><?= $no ;?></td>
-                                    <td><?= $user['tgl_berobat'] ;?></td>
+                                    <td><?= $user['tgl_rekam_medis'] ;?></td>
                                     <td><?= $user['nama_pasien'] ;?></td>
                                     <td><?= $user['umur'] ;?></td>
                                     <td><?= $user['nama_dokter'] ;?></td>
                                     <td>
-                                        <a href="<?= base_url() ;?>kunjungan/rekam/<?= $user['id_berobat'] ;?>" class="btn btn-success btn-sm">Rekam</a>
+                                        <a href="<?= base_url() ;?>kunjungan/rekam/<?= $user['id_rekam_medis'] ;?>" class="btn btn-success btn-sm">Rekam</a>
                                     </td>
                                     <td>
-                                        <a href="<?= base_url().'kunjungan/edit/'.$user['id_berobat'] ;?>" class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="<?= base_url().'kunjungan/hapus/'.$user['id_berobat'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
+                                        <a href="<?= base_url().'kunjungan/edit/'.$user['id_rekam_medis'] ;?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="<?= base_url().'kunjungan/hapus/'.$user['id_rekam_medis'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
                                     </td>
                                 </tr>
                             <?php $no++; } ?>

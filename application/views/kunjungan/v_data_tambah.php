@@ -9,7 +9,7 @@
                 <form action="<?= base_url('kunjungan/insert') ;?>" method="POST">
                     <div class="form-group mb-2">
                         <label for="tgl">Tanggal Berobat</label>
-                        <input type="date" id="tgl" name="tgl_berobat" class="form-control" required>
+                        <input type="date" id="tgl" name="tgl_rekam_medis" class="form-control" required>
                     </div>
                     <div class="form-group mb-2">
                         <label for="pasien">Nama Pasien</label>

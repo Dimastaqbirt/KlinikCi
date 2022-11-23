@@ -7,10 +7,10 @@
             <div class="card-body">
                 <a href="<?= base_url('kunjungan'); ?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Kembali</a>
                 <form action="<?= base_url('kunjungan/update') ;?>" method="POST">
-                <input type="hidden" name="id_berobat" value="<?= $u['id_berobat'] ;?>">
+                <input type="hidden" name="id_rekam_medis" value="<?= $u['id_rekam_medis'] ;?>">
                     <div class="form-group mb-2">
-                        <label for="tgl">Tanggal Berobat</label>
-                        <input type="date" id="tgl" name="tgl_berobat" class="form-control" value="<?= $u['tgl_berobat'] ;?>" required>
+                        <label for="tgl">Tanggal rekam_medis</label>
+                        <input type="date" id="tgl" name="tgl_rekam_medis" class="form-control" value="<?= $u['tgl_rekam_medis'] ;?>" required>
                     </div>
                     <div class="form-group mb-2">
                         <label for="pasien">Nama Pasien</label>

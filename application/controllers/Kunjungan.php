@@ -40,12 +40,12 @@ class Kunjungan extends CI_Controller {
     public function insert(){
         $nama_pasien = $this->input->post('nama_pasien');
         $nama_dokter = $this->input->post('nama_dokter');
-        $tgl_berobat = $this->input->post('tgl_berobat');
+        $tgl_rekam_medis = $this->input->post('tgl_rekam_medis');
 
         $data = array (
             'id_pasien' => $nama_pasien,
             'id_dokter' => $nama_dokter,
-            'tgl_berobat' => $tgl_berobat
+            'tgl_rekam_medis' => $tgl_rekam_medis
         );
 
         $this->m_kunjungan->insert_data($data);
@@ -55,7 +55,7 @@ class Kunjungan extends CI_Controller {
     
     public function edit($id){
         $data['title'] = 'Edit Data Kunjungan';
-        $where = array ('id_berobat' => $id);
+        $where = array ('id_rekam_medis' => $id);
         $data['u']= $this->m_kunjungan->edit_data($where)->row_array();
         $data['dokter'] = $this->m_dokter->tampil_data()->result_array();
         $data['pasien'] = $this->m_pasien->tampil_data()->result_array();
@@ -66,20 +66,20 @@ class Kunjungan extends CI_Controller {
 }
 
     public function update(){
-        $id = $this->input->post('id_berobat');
+        $id = $this->input->post('id_rekam_medis');
         $nama_pasien = $this->input->post('nama_pasien');
         $nama_dokter = $this->input->post('nama_dokter');
-        $tgl_berobat = $this->input->post('tgl_berobat');
+        $tgl_rekam_medis = $this->input->post('tgl_rekam_medis');
 
         $data = array (
             'id_pasien' => $nama_pasien,
             'id_dokter' => $nama_dokter,
-            'tgl_berobat' => $tgl_berobat
+            'tgl_rekam_medis' => $tgl_rekam_medis
         );
 
 
 
-        $where = array('id_berobat' => $id);
+        $where = array('id_rekam_medis' => $id);
 
         $this->m_kunjungan->update_data($data,$where);
 
@@ -87,7 +87,7 @@ class Kunjungan extends CI_Controller {
 }
 
     public function hapus($id){
-        $where = array ('id_berobat' => $id);
+        $where = array ('id_rekam_medis' => $id);
         $this->m_kunjungan->hapus_data($where);
 
         redirect('kunjungan');
@@ -101,7 +101,7 @@ class Kunjungan extends CI_Controller {
 
         $data['d']= $this->m_kunjungan->tampil_rm($id)->row_array();
 
-        $q=$this->db->query("SELECT id_pasien FROM berobat WHERE id_berobat='$id'")->row_array();
+        $q=$this->db->query("SELECT id_pasien FROM rekam_medis WHERE id_rekam_medis='$id'")->row_array();
 
         $id_pasien = $q['id_pasien'];
         $data['riwayat'] = $this->m_kunjungan->tampil_riwayat($id_pasien)->result_array();
@@ -122,7 +122,7 @@ class Kunjungan extends CI_Controller {
     }
 
     function insert_rm(){
-        $id_berobat = $this->input->post('id');
+        $id_rekam_medis = $this->input->post('id');
         $keluhan = $this->input->post('keluhan');
         $diagnosa = $this->input->post('diagnosa');
         $penatalaksanaan = $this->input->post('penatalaksanaan');
@@ -133,31 +133,31 @@ class Kunjungan extends CI_Controller {
             'penatalaksanaan' => $penatalaksanaan
         );
 
-        $where = array('id_berobat'=>$id_berobat);
+        $where = array('id_rekam_medis'=>$id_rekam_medis);
 
         $this->m_kunjungan->update_data($data,$where);
 
-        redirect('kunjungan/rekam/'.$id_berobat);
+        redirect('kunjungan/rekam/'.$id_rekam_medis);
     }
     function insert_resep(){
-        $id_berobat = $this->input->post('id');
+        $id_rekam_medis = $this->input->post('id');
         $obat = $this->input->post('obat');
 
         $data = array(
-            'id_berobat' => $id_berobat,
+            'id_rekam_medis' => $id_rekam_medis,
             'id_obat' => $obat
         );
 
         $this->m_kunjungan->insert_resep($data);
 
-        redirect('kunjungan/rekam/'.$id_berobat);
+        redirect('kunjungan/rekam/'.$id_rekam_medis);
 
 
     }
-    function hapus_resep($id, $id_berobat){
+    function hapus_resep($id, $id_rekam_medis){
         $where = array('id_resep'=>$id);
         $this->m_kunjungan->hapus_resep($id);
-        redirect('kunjungan/rekam/'.$id_berobat);
+        redirect('kunjungan/rekam/'.$id_rekam_medis);
 
     }
 }

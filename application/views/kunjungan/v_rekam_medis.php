@@ -40,14 +40,14 @@
 
                 <div class="card border-info">   
                     <div class="card-header bg-info text-white">
-                        Riwayat Data Berobat
+                        Riwayat Data rekam_medis
                     </div>
                     <div class="card-body">
                         <table class="table table-sm table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Tgl. Berobat</th>
+                                    <th>Tgl. rekam_medis</th>
                                     <th>Keluhan</th>
                                     <th>Diagnosa</th>
                                     <th>Penatalaksanaan</th>
@@ -63,7 +63,7 @@
                                         <?= $no ;?>
                                     </td>
                                     <td>
-                                        <?= $r['tgl_berobat'] ;?>
+                                        <?= $r['tgl_rekam_medis'] ;?>
                                     </td>
                                     <td>
                                     <?= $r['keluhan'] ;?>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="card-body">
                         <form action="<?= base_url('kunjungan/insert_rm') ;?>" method="post" class="form-group">
-                        <input name="id" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_berobat'] ;?>">
+                        <input name="id" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_rekam_medis'] ;?>">
                         <div class="form-group mb-1" >
                             <label for="keluhan" class="form-group">Keluhan</label>
                             <textarea name="keluhan" id="keluhan"class="form-group d-flex" cols="65" rows="0"><?= $r['keluhan'] ;?></textarea required>
@@ -101,7 +101,7 @@
                         <div class="form-group mb-1">
                             <label for="">Penatalaksanaan</label>
                             <select name="penatalaksanaan" required class="form-group d-flex" >
-                            <?php if($d['id_berobat']==$r['id_berobat']){
+                            <?php if($d['id_rekam_medis']==$r['id_rekam_medis']){
                                 $aktif ='selected';
                             } else {
                                 $aktif = '';
@@ -127,7 +127,7 @@
                     </div>
                     <div class="card-body">
                         <form action="<?= base_url('kunjungan/insert_resep');?>" method="post">
-                        <input name="id" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_berobat'] ;?>">
+                        <input name="id" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_rekam_medis'] ;?>">
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
@@ -163,7 +163,7 @@
                                         <?= $o['nama_obat'] ;?>
                                     </td>
                                     <td>
-                                        <a href="<?= base_url().'kunjungan/hapus_resep/'.$o['id_resep'].'/'.$o['id_berobat'] ;?>" value="" class="btn btn-sm text-danger">
+                                        <a href="<?= base_url().'kunjungan/hapus_resep/'.$o['id_resep'].'/'.$o['id_rekam_medis'] ;?>" value="" class="btn btn-sm text-danger">
                                         x
                                         </a>
                                     </td>
