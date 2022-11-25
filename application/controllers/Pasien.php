@@ -83,7 +83,17 @@ class Pasien extends CI_Controller {
         redirect('pasien');
     }
 
+    public function cari(){
+        $keyword = $this->input->post('keyword');
+        $data['title'] = 'Manajemen Data Pasien';
 
+        $data['pasien']=$this->m_pasien->get_keyword($keyword)->result_array();
+
+
+        $this->load->view('v_header',$data);
+		$this->load->view('pasien/v_data',$data);
+		$this->load->view('v_footer');
+    }
 
 
 

@@ -6,7 +6,7 @@
             </div>
             <div class="card-body">
                 <a href="<?= base_url('pasien/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah Pasien Baru</a>
-                <a href="<?= base_url('kunjungan/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah Kunjungan Baru</a>
+                <a href="<?= base_url('kunjungan/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2 ">Tambah Kunjungan Baru</a>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center">
                         <thead class="biru-muda">

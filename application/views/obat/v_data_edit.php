@@ -1,4 +1,4 @@
-<section class="konten mt-2">
+<section class="konten mt-2"> 
     <div class="container-fluid mt-2">
         <div class="card border-biru-banget">
             <div class="card-header bg-biru-hitam text-light">

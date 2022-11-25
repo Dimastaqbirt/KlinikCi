@@ -1,8 +1,8 @@
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="container">
         <span class="text-muted ">Copyright &copy; 2022 Klinik Sehat Selalu</span>
     </div>
-</footer>
+</footer> -->
 
 <script scr="<?= base_url();?>assets/js/bootstrap.bundle.min.js"></script>
 <script scr="<?= base_url();?>assets/js/bootstrap.min.js"></script>

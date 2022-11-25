@@ -7,7 +7,7 @@
             <div class="card-body">
                 <a href="<?= base_url('pasien'); ?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Kembali</a>
                 <form action="<?= base_url('pasien/update') ;?>" method="POST">
-                    <input type="hidden" name="id" value="<?= $u['id_pasien'] ;?>">
+                    <input type="hidden" name="id_pasien" value="<?= $u['id_pasien'] ;?>">
                     <div class="form-group mb-2">
                         <label for="nama_pasien" class="mb-2">nama Pasien</label>
                         <input type="text" name="nama_pasien" class="form-control" value="<?= $u['nama_pasien'] ;?>">
@@ -15,8 +15,8 @@
                     <div class="form-group mb-2">
                         <label for="jenis_kelamin" class="mb-2">Jenis Kelamin</label>
                         <select type="text" name="jenis_kelamin" class="form-control mb-2" value="<?= $u['jenis_kelamin'] ;?>">
-                            <option value="L">L</option>
-                            <option value="P">P</option>
+                            <option value="L">Laki-laki</option>
+                            <option value="P">Perempuan</option>
                         </select>
                     </div>
                     <div class="form-group mb-2">

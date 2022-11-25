@@ -25,6 +25,16 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .bg-custom-rumahSakit {
+            background-image: url("<?= base_url('assets/images/rumahsakit.jpg');?>");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bg-custom-ruangan {
+            background-image: url("<?= base_url('assets/images/ruangan.jpg');?>");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         .bg-biru {
             background-color: #063970;
         }
