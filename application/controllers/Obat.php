@@ -75,7 +75,17 @@ class Obat extends CI_Controller {
         redirect('obat');
     }
 
+    public function cari(){
+        $keyword = $this->input->post('keyword');
+        $data['title'] = 'Manajemen Data Obat';
 
+        $data['obat']=$this->m_obat->get_keyword($keyword)->result_array();
+
+
+        $this->load->view('v_header',$data);
+		$this->load->view('obat/v_data',$data);
+		$this->load->view('v_footer');
+    }
 
 
 

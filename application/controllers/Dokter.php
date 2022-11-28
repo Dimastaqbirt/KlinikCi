@@ -108,7 +108,17 @@ class Dokter extends CI_Controller {
         redirect('dokter');
     }
 
+    public function cari(){
+        $keyword = $this->input->post('keyword');
+        $data['title'] = 'Manajemen Data Dokter';
 
+        $data['dokter']=$this->m_dokter->get_keyword($keyword)->result_array();
+
+
+        $this->load->view('v_header',$data);
+		$this->load->view('dokter/v_data',$data);
+		$this->load->view('v_footer');
+    }
 
 
 
