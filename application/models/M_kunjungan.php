@@ -11,7 +11,8 @@ class M_kunjungan extends CI_Model{
         dokter.nama_dokter
     FROM rekam_medis
     INNER JOIN pasien ON rekam_medis.id_pasien=pasien.id_pasien
-    INNER JOIN dokter ON rekam_medis.id_dokter=dokter.id_dokter');
+    INNER JOIN dokter ON rekam_medis.id_dokter=dokter.id_dokter
+    ORDER BY tgl_rekam_medis DESC');
 
     return $query;
     }
@@ -81,5 +82,24 @@ return $query;
     function hapus_resep($where){
         $this->db->where($where);
         $this->db->delete('resep_obat');
+    }
+
+    function get_keyword($keyword){
+
+        $query=$this->db->query("SELECT rekam_medis.*, 
+        pasien.nama_pasien, 
+        pasien.umur, 
+        pasien.jenis_kelamin, 
+        dokter.nama_dokter
+    FROM rekam_medis
+    INNER JOIN pasien ON rekam_medis.id_pasien=pasien.id_pasien
+    INNER JOIN dokter ON rekam_medis.id_dokter=dokter.id_dokter
+    WHERE pasien.nama_pasien LIKE '%$keyword%' OR
+    rekam_medis.tgl_rekam_medis LIKE '%$keyword%' OR
+    pasien.umur LIKE '%$keyword%' OR
+    dokter.nama_dokter LIKE '%$keyword%'
+    ");
+
+        return $query;
     }
 }

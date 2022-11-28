@@ -160,4 +160,16 @@ class Kunjungan extends CI_Controller {
         redirect('kunjungan/rekam/'.$id_rekam_medis);
 
     }
+
+    public function cari(){
+        $keyword = $this->input->post('keyword');
+        $data['title'] = 'Rekam medis';
+
+        $data['kunjungan']=$this->m_kunjungan->get_keyword($keyword)->result_array();
+
+
+        $this->load->view('v_header',$data);
+		$this->load->view('kunjungan/v_data',$data);
+		$this->load->view('v_footer');
+    }
 }
