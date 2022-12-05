@@ -40,6 +40,10 @@
         .bg-biru-hitam{
             background-color: #212a46;
         }
+        *{
+            background-color: #FFFFFF;
+            
+        }
         
 
     </style>

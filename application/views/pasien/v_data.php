@@ -14,7 +14,7 @@
                         <div class="col-lg-3 d-flex ">
                             <form action="<?= base_url('pasien/cari') ;?>" method="post">
                                 <div class="input-group mb-3 d-flex mx-5">
-                                    <input type="text" class="form-control w-26 " placeholder="Cari.." name="keyword" aria-label="Cari.." aria-describedby="button-addon2">
+                                    <input type="text" class="form-control w-26 " autocomplete="off" placeholder="Cari.." name="keyword" aria-label="Cari.." aria-describedby="button-addon2">
                                     <button type="submit" class="btn btn-outline-secondary btn-dark"><i class="fa fa-search text-light"></i></button>
 
                                     <!-- <button class="btn btn-outline-secondary btn-light" type="button" id="button-addon2"><i class="fa fa-search"></i></button> -->

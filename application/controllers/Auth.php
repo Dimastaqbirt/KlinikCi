@@ -7,6 +7,11 @@ class Auth extends CI_Controller {
         parent::__construct();
 		$this->load->model('m_login');
 
+		if($this->session->userdata('login')){
+            redirect("dashboard");
+        }
+        $this->load->helper('url');
+
     }
 	public function index()
 	{

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title><?= $title; ?></title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css')?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/style1.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style10.css')?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
@@ -58,7 +58,7 @@
 
 <section id="nav">
     <nav class="navbar navbar-expand-lg navbar-dark bg-biru-banget">
-        <a class="navbar-brand me-2 mx-2" href="<?= base_url() ;?>"><h2><i class="fa-solid fa-hospital w-25 mx-3"></i>Klinik</h2></a>
+        <a class="navbar-brand me-2 mx-2 d-flex align-items-center" href="<?= base_url() ;?>"><h3><i class="fa-solid fa-hospital w-25 mx-3"></i>Klinik</h3></a>
     <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -99,7 +99,8 @@
 
         <ul class="navbar-nav ms-auto">
             <li class="nav-item ms-auto">
-                <a href="<?= base_url('auth/logout') ;?>" class="nav-link btn btn-success btn-sm text-white">Log Out</a>
+                <a href="<?= base_url('auth/logout') ;?>" class=" btn btn-success btn-md text-white">Log Out</a>
+                
             </li>
         </ul>
         </div>
