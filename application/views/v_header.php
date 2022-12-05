@@ -50,6 +50,9 @@
         .bg-biru-hitam{
             background-color: #212a46;
         }
+        #team {
+        background-image: linear-gradient(rgb(17, 24, 39), rgb(75, 85, 99));
+      }
         
 
     </style>
@@ -58,17 +61,19 @@
 
 <section id="nav">
     <nav class="navbar navbar-expand-lg navbar-dark bg-biru-banget">
-        <a class="navbar-brand me-2 mx-2 d-flex align-items-center" href="<?= base_url() ;?>"><h3><i class="fa-solid fa-hospital w-25 mx-3"></i>Klinik</h3></a>
-    <div class="container">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="<?= base_url() ;?>">
+                <img class="img-fluid mx-3 navbar-brand  d-flex align-items-center" src="<?= base_url('assets/images/logoklinik.png');?>"  width="50px" alt="foto">
+            </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav me-4">
-            <li class="nav-item me-4 ">
+        <ul class="navbar-nav ">
+            <li class="nav-item me-3 ">
                 <a class="nav-link active" href="<?= base_url() ;?>">Home</a>
             </li>
-            <li class="nav-item me-4 ">
+            <li class="nav-item me-3 ">
                 <a class="nav-link active" href="<?= base_url('kunjungan') ;?>">Kunjungan/Berobat</a>
             </li>
             <li class="nav-item dropdown">
@@ -87,7 +92,7 @@
             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Laporan
             </a>    
-            <ul class="dropdown-menu me-4 active">
+            <ul class="dropdown-menu me-3 active">
                 <li><a class="dropdown-item" href="<?= base_url('laporan/data_dokter') ;?>">Data Dokter</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="<?= base_url('laporan/data_pasien') ;?>">Data Pasien</a></li>
@@ -99,7 +104,7 @@
 
         <ul class="navbar-nav ms-auto">
             <li class="nav-item ms-auto">
-                <a href="<?= base_url('auth/logout') ;?>" class=" btn btn-success btn-md text-white">Log Out</a>
+                <a href="<?= base_url('dashboard/logout') ;?>" class=" btn btn-success btn-sm text-white">Log Out</a>
                 
             </li>
         </ul>

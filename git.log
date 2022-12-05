@@ -1,0 +1,20 @@
+fatal: bad config line 1 in file .git/config
+fatal: bad config line 1 in file .git/config
+    while executing
+"close $fd"
+    (procedure "git" line 5)
+    invoked from within
+"git config --global --add gui.recentrepo $path"
+    (procedure "_append_recentrepos" line 14)
+    invoked from within
+"_append_recentrepos [pwd]"
+    (procedure "choose_repository::_do_open2" line 12)
+    invoked from within
+"choose_repository::_do_open2 ::choose_repository::__o1::__d"
+    invoked from within
+".buttons.next invoke "
+    invoked from within
+".buttons.next instate !disabled { .buttons.next invoke } "
+    invoked from within
+".buttons.next instate pressed { .buttons.next state !pressed; .buttons.next instate !disabled { .buttons.next invoke } } "
+    (command bound to event)
