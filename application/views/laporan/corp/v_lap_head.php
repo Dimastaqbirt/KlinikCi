@@ -13,11 +13,20 @@
         .table-bordered td{
             border: 1px solid #000;
         }
+        .bg-custom-logo {
+            background-image: url("<?= base_url('assets/images/doctor-with-stethoscope-hands-hospital-background.jpg');?>");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
     <div class="container mt-4">
-        <h3 class="mb-0">KLINIK UBSI MEDIKA</h3>   
+        <img class="img-fluid d-flex float-end" src="<?= base_url('assets/images/logoklinik.png');?>" width="70px" alt="foto">
+        <h3 class="mb-0 mt-4">KLINIK Djava Medika</h3>   
         <small>Jl. Sutisna Senjaya No.1001, Empangsari, Kec. Tawang, Kab. Tasikmalaya, Jawa Barat 46112</small>
-        <hr>
+        <div class="row mt-4">
+            
+            <hr>
+        </div>
         <h4 class="text-center mb-2"><?= $title ;?></h4>

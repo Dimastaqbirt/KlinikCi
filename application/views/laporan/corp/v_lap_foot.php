@@ -4,13 +4,18 @@
                     <table widht="100%" class="mt-3">
                         <tr>
                             <td></td>
-                            <td widht="300px">
-                                <p>
+                            <td>
+                                <small>
                                     Tasikmalaya,<?= date('d-m-20y') ;?>
                                     <br>
                                     Administrator,
-                                    <br><br><br><br>
-                                    <b>______________________</b>
+                                </small>
+                                <p>
+                                    <img class="img-fluid d-flex float-end me-5 mt-3 mb-2" src="<?= base_url('assets/images/tandatangan.png');?>" width="120px" alt="foto">
+                                    <br>
+                                    <br>
+                                    
+                                    <b>Jason A.Md.RMIK</b>
                                 </p>
                             </td>
                         </tr>
