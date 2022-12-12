@@ -9,6 +9,7 @@
                         <div class="col-sm-8 me-2">
                             <div class="me-5">
                             <a href="<?= base_url('pasien/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2 ">Tambah</a>
+                            <a href="<?= base_url('laporan/data_pasien') ;?>" class="btn btn-primary btn-sm text-light ms-auto mb-2 ">Cetak Laporan</a>
                             </div>
                         </div>
                         <div class="col-lg-3 d-flex ">
@@ -47,8 +48,11 @@
                                     ?></td>
                                     <td><?= $user['umur'] ;?></td>
                                     <td>
+                                    <div class="d-flex gap-1 justify-content-center">
+                                    
                                         <a href="<?= base_url().'pasien/edit/'.$user['id_pasien'] ;?>" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="<?= base_url().'pasien/hapus/'.$user['id_pasien'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
+                                    </div>
                                     </td>
                                 </tr>
                             <?php $no++; } ?>
