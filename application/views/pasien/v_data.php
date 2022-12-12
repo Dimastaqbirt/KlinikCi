@@ -48,8 +48,11 @@
                                     ?></td>
                                     <td><?= $user['umur'] ;?></td>
                                     <td>
+                                    <div class="d-flex gap-1 justify-content-center">
+                                    
                                         <a href="<?= base_url().'pasien/edit/'.$user['id_pasien'] ;?>" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="<?= base_url().'pasien/hapus/'.$user['id_pasien'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
+                                    </div>
                                     </td>
                                 </tr>
                             <?php $no++; } ?>

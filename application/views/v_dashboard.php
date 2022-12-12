@@ -4,9 +4,9 @@
         <div class="row mt-5">
           <section>
             <div class="row">
-              <div class="col-lg-3">
+              <div class="col-lg-3 mb-3">
                 <div class="card shadow border-0">
-                  <div class="card-body">
+                  <div class="card-body bg-white ">
                     <div class="row">
                       <div class="col-3">
                         <h1 class='mt-3'>
@@ -23,7 +23,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 mb-3">
                 <div class="card shadow border-0">
                   <div class="card-body">
                     <div class="row">
@@ -44,7 +44,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 mb-3">
                 <div class="card shadow border-0">
                   <div class="card-body">
                     <div class="row">
@@ -65,7 +65,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 mb-3">
                 <div class="card shadow border-0">
                   <div class="card-body">
                     <div class="row">
