@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <style>
         .bg-custom {
             background-image: url("<?= base_url('assets/images/doctor-with-stethoscope-hands-hospital-background.jpg');?>");
@@ -78,7 +79,7 @@
                 <a class="nav-link active" href="<?= base_url() ;?>">Home</a>
             </li>
             <li class="nav-item me-3 ">
-                <a class="nav-link active" href="<?= base_url('kunjungan') ;?>">Kunjungan/Berobat</a>
+                <a class="nav-link active" href="<?= base_url('kunjungan') ;?>">Kunjungan/Rekam medis</a>
             </li>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -107,6 +108,9 @@
         </ul>
 
         <ul class="navbar-nav ms-auto">
+            <h3>
+                <!-- <?= $user;?> -->
+            </h3>
             <li class="nav-item ms-auto">
                 <a href="<?= base_url('dashboard/logout') ;?>" class=" btn btn-success btn-sm text-white">Log Out</a>
                 

@@ -9,6 +9,10 @@
                     <div class="col-sm-8 me-2">
                     <div class="me-5">
                         <a href="<?= base_url('dokter/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah</a>
+                        <a href="<?= base_url('laporan/data_dokter') ;?>" class="btn btn-primary btn-sm text-light ms-auto mb-2">Cetak Laporan</a>
+
+                    </div>
+                    <div class="me-5 mb-1">
                     </div>
                     </div>
                     <div class="col-lg-3 d-flex ">
@@ -18,7 +22,7 @@
                                 <button type="submit" class="btn btn-outline-secondary btn-dark"><i class="fa fa-search text-light"></i></button>
                             </div>
                         </form>
-                        </div>
+                    </div>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center">
@@ -74,3 +78,6 @@
         <?php $no++; } ?>
     </div>
 </div>
+
+
+

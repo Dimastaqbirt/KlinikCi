@@ -1,18 +1,109 @@
+
 <div class="container-fluid bg-custom-rumahSakit vh-100">
     <div class="container py-5">
         <div class="row mt-5">
+          <section>
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-3">
+                        <h1 class='mt-3'>
+                        <i class="bi bi-briefcase text-success"></i>
+                        </h1>
+                      </div>
+                      <div class="col-9">
+                        <h4>Admin</h4>
+                        <h4 class="mt-2 ">
+                          <?= $pengguna; ?> 
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-3">
+                        <h1 class='mt-3'>
+                          <i class="fa-sharp fa-solid fa-stethoscope text-primary"></i>
+                        </h1>
+                      </div>
+                      <div class="col-9">
+                        <h4>
+                        dokter
+                        </h4>
+                        <h4>
+                          <?= $dokter; ?> 
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-3">
+                        <h1 class='mt-3'>
+                          <i class="fa-sharp fa-solid fa-users-between-lines"></i>
+                        </h1>
+                      </div>
+                      <div class="col-9 ">
+                        <h4>
+                        Pasien
+                        </h4>
+                        <h4>
+                          <?= $pasien; ?> 
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="card shadow border-0">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-3">
+                          <h1 class='mt-3'>
+                            <i class="bi bi-person-vcard text-danger"></i>
+                          </h1>
+                      </div>
+                      <div class="col-9">
+                        <h4>kunjungan</h4>
+                        <h4>
+                          <?= $rekam_medis; ?> 
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
             <div class="col-lg-6">
                 <h1 class="display-4 mt-5">Selamat Datang!</h1>
                 <p class="lead">Di Aplikasi Pengelolaan Rekam Medis Klinik</p>
                 <hr class="my-4">
                 <p class="lead">
-                <a class="btn btn-primary btn-lg" href="<?= base_url('kunjungan') ;?>" role="button">Kunjungan/berobat</a>
+                <a class="btn btn-primary btn-lg" href="<?= base_url('kunjungan') ;?>" role="button">Kunjungan/Rekam medis</a>
                 <a class="btn btn-primary btn-lg" href="<?= base_url('pasien') ;?>" role="button">PASIEN BARU</a>
                 </p>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
 <section id="team">
     <div class="container-fluid">
         <div class="container py-5">
@@ -159,7 +250,7 @@
           <div class="col">
             <hr>
             <p class="text-light">
-              &copy; Copyright 2022. <span class="fw-bold text-warning text-center" style="font-family: LUPINES demo, Lemon milk light; ">COFFEEE KITA</span>
+              &copy; Copyright 2022. <span class="fw-bold text-warning text-center" style="font-family: LUPINES demo, Lemon milk light; ">KELOMPOK ENAM</span>
             </p>
           </div>
         </div>
