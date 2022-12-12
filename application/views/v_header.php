@@ -93,7 +93,7 @@
             </ul>
             </li>
 
-            <li class="nav-item dropdown ">
+            <!-- <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Laporan
             </a>    
@@ -103,15 +103,15 @@
                 <li><a class="dropdown-item" href="<?= base_url('laporan/data_pasien') ;?>">Data Pasien</a></li>
                 <li><a class="dropdown-item" href="<?= base_url('laporan/data_kunjungan') ;?>">Data Kunjungan</a></li>
             </ul>
-            </li>
+            </li> -->
                 
         </ul>
 
         <ul class="navbar-nav ms-auto">
-            <h3>
-                <!-- <?= $user;?> -->
-            </h3>
-            <li class="nav-item ms-auto">
+                <li class="nav-item ms-auto">
+                <a href="#" class="text-white text-decoration-none me-2">
+                    <?= $this->session->userdata('username');?>
+                </a>
                 <a href="<?= base_url('dashboard/logout') ;?>" class=" btn btn-success btn-sm text-white">Log Out</a>
                 
             </li>
