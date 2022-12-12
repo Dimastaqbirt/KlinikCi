@@ -156,7 +156,7 @@ class Kunjungan extends CI_Controller {
     }
     function hapus_resep($id, $id_rekam_medis){
         $where = array('id_resep'=>$id);
-        $this->m_kunjungan->hapus_resep($id);
+        $this->m_kunjungan->hapus_resep($where);
         redirect('kunjungan/rekam/'.$id_rekam_medis);
 
     }

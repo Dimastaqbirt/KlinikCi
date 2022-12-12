@@ -75,9 +75,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3 mb-3">
+                <div class="col-lg-3 mb-3">
                     <div class="card border-light">
-                        <img class="card-img-top" src="holder.js/100px180/" alt="">
+                        <img class="card-img-top d-flex mx-auto justify-content-center " width='1020px' src="holder.js/100px180/" alt="">
                         <div class="card-body">
                             <img src="<?= base_url('assets/images/fotkel/euis.jpeg') ;?>" class="img img-fluid rounded mb-3 "alt="FOTO">
                             <h4 class="card-title mb-0"><b>Euis A’fiyah N</b></h4>

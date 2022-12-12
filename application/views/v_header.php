@@ -53,6 +53,10 @@
         #team {
         background-image: linear-gradient(rgb(17, 24, 39), rgb(75, 85, 99));
       }
+      @font-face {
+        font-family: "LUPINES demo";
+        src: url("<?= base_url('assests/font/LUPINES.ttf');?>");
+      }
         
 
     </style>
