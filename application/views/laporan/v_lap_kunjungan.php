@@ -31,8 +31,8 @@
         </div>
         <h4 class="text-center mb-2"><?= $title.' '.strtoupper($waktu) ;?> </h4>
 
-        <table class="table table-bordered table-sm mb-2 mt-3 text-center">
-            <tr class="">
+        <table class="table table-bordered table-sm mb-2 mt-3 ">
+            <tr class="text-center">
                 <th widht="80px">No.</th>
                 <th>Tanggal Kunjungan</th>
                 <th>Nama Pasien</th>
@@ -46,8 +46,8 @@
             $no=1;
             foreach($cetak as $r){
             ?>
-                <tr>
-                    <td><?= $no ;?></td>
+                <tr class="">
+                    <td class="text-center"><?= $no ;?></td>
                     <td><?= tanggal_indo($r['tgl_rekam_medis']) ;?></td>
                     <?php $pasien = $this->db->get_where("pasien", ['id_pasien' => $r['id_pasien']])->row_array();?>
                     <td><?= $pasien["nama_pasien"];?></td>

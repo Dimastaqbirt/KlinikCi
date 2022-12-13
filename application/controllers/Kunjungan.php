@@ -92,11 +92,13 @@ class Kunjungan extends CI_Controller {
     }
 
     public function insert(){
+        $id = $this->input->post('id');
         $nama_pasien = $this->input->post('nama_pasien');
         $nama_dokter = $this->input->post('nama_dokter');
         $tgl_rekam_medis = $this->input->post('tgl_rekam_medis');
 
         $data = array (
+            'id' => $id,
             'id_pasien' => $nama_pasien,
             'id_dokter' => $nama_dokter,
             'tgl_rekam_medis' => $tgl_rekam_medis
@@ -176,7 +178,7 @@ class Kunjungan extends CI_Controller {
     }
 
     function insert_rm(){
-        $id_rekam_medis = $this->input->post('id');
+        $id_rekam_medis = $this->input->post('id_rekam_medis');
         $keluhan = $this->input->post('keluhan');
         $diagnosa = $this->input->post('diagnosa');
         $penatalaksanaan = $this->input->post('penatalaksanaan');

@@ -50,7 +50,7 @@
                     <div class="row">
                       <div class="col-3">
                         <h1 class='mt-3'>
-                          <i class="fa-sharp fa-solid fa-users-between-lines"></i>
+                          <i class="fa-sharp fa-solid fa-users-between-lines text-warning"></i>
                         </h1>
                       </div>
                       <div class="col-9 ">

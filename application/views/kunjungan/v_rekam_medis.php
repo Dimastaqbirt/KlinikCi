@@ -95,7 +95,7 @@
                     </div>
                     <div class="card-body">
                         <form action="<?= base_url('kunjungan/insert_rm') ;?>" method="post" class="form-group">
-                        <input name="id" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_rekam_medis'] ;?>">
+                        <input name="id_rekam_medis" id="" class="btn btn-primary" type="hidden" value="<?= $d['id_rekam_medis'] ;?>">
                         <div class="form-group mb-1" >
                             <label for="keluhan" class="form-group">Keluhan</label>
                             <textarea name="keluhan" id="keluhan"class="form-control d-flex" cols="65" rows="0"><?= $r['keluhan'] ;?></textarea required>
