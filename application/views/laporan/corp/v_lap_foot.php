@@ -1,12 +1,12 @@
 <div class="row">
-                <div class="col-9"></div>
-                <div class="col-3">
+                <div class="col-8"></div>
+                <div class="col-4">
                     <table widht="100%" class="mt-3">
                         <tr>
                             <td></td>
                             <td>
                                 <small>
-                                    Tasikmalaya,<?= date('d-m-20y') ;?>
+                                    Tasikmalaya, <?= tanggal_indo(date('Y-m-d')) ;?>
                                     <br>
                                     Administrator,
                                 </small>

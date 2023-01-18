@@ -35,8 +35,10 @@
                                     <td class="text-center"><?= $no ;?></td>
                                     <td><?= $user['nama_obat'] ;?></td>
                                     <td>
+                                    <div class="d-flex gap-1 justify-content-center">
                                         <a href="<?= base_url().'obat/edit/'.$user['id_obat'] ;?>" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="<?= base_url().'obat/hapus/'.$user['id_obat'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
+                                    </div>
                                     </td>
                                 </tr>
                             <?php $no++; } ?>

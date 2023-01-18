@@ -19,6 +19,60 @@ class Kunjungan extends CI_Controller {
         $data['title'] = 'Manajemen Data kunjungan';
 
         $data['kunjungan'] = $this->m_kunjungan->tampil_data()->result_array();
+        $data["bulan"] = [
+            [
+                "no" => 1,
+                "nama" => "Januari",
+            ],
+            [
+                "no" => 2,
+                "nama" => "Februari",
+            ],
+            [
+                "no" => 3,
+                "nama" => "Maret",
+            ],
+            [
+                "no" => 4,
+                "nama" => "April",
+            ],
+            [
+                "no" => 5,
+                "nama" => "Mei",
+            ],
+            [
+                "no" => 6,
+                "nama" => "Juni",
+            ],
+            [
+                "no" => 7,
+                "nama" => "Juli",
+            ],
+            [
+                "no" => 8,
+                "nama" => "Agustus",
+            ],
+            [
+                "no" => 9,
+                "nama" => "September",
+            ],
+            [
+                "no" => 10,
+                "nama" => "Oktober",
+            ],
+            [
+                "no" => 11,
+                "nama" => "November",
+            ],
+            [
+                "no" => 12,
+                "nama" => "Desember",
+            ],
+        ];
+
+        $data["tahun"] = [
+            2021, 2022, 2023, 2024, 2025
+        ];
 
 		$this->load->view('v_header',$data);
 		$this->load->view('kunjungan/v_data',$data);
@@ -38,11 +92,13 @@ class Kunjungan extends CI_Controller {
     }
 
     public function insert(){
+        $id = $this->input->post('id');
         $nama_pasien = $this->input->post('nama_pasien');
         $nama_dokter = $this->input->post('nama_dokter');
         $tgl_rekam_medis = $this->input->post('tgl_rekam_medis');
 
         $data = array (
+            'id' => $id,
             'id_pasien' => $nama_pasien,
             'id_dokter' => $nama_dokter,
             'tgl_rekam_medis' => $tgl_rekam_medis
@@ -122,15 +178,17 @@ class Kunjungan extends CI_Controller {
     }
 
     function insert_rm(){
-        $id_rekam_medis = $this->input->post('id');
+        $id_rekam_medis = $this->input->post('id_rekam_medis');
         $keluhan = $this->input->post('keluhan');
         $diagnosa = $this->input->post('diagnosa');
         $penatalaksanaan = $this->input->post('penatalaksanaan');
+        $keterangan = $this->input->post('keterangan');
 
         $data = array(
             'keluhan' => $keluhan,
             'hasil_diagnosa' => $diagnosa,
-            'penatalaksanaan' => $penatalaksanaan
+            'penatalaksanaan' => $penatalaksanaan,
+            'keterangan' => $keterangan
         );
 
         $where = array('id_rekam_medis'=>$id_rekam_medis);
@@ -166,10 +224,13 @@ class Kunjungan extends CI_Controller {
         $data['title'] = 'Rekam medis';
 
         $data['kunjungan']=$this->m_kunjungan->get_keyword($keyword)->result_array();
+        
 
 
         $this->load->view('v_header',$data);
 		$this->load->view('kunjungan/v_data',$data);
 		$this->load->view('v_footer');
     }
+
+
 }

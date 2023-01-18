@@ -23,8 +23,11 @@
                                     <td><?= $user['username'] ;?></td>
                                     <td><?= $user['nama_lengkap'] ;?></td>
                                     <td>
+                                    <div class="d-flex gap-1 justify-content-center">
+                                    
                                         <a href="<?= base_url().'users/edit/'.$user['id'] ;?>" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="<?= base_url().'users/hapus/'.$user['id'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
+                                    </div>
                                     </td>
                                 </tr>
                             <?php $no++; } ?>

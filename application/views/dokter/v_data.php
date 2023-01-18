@@ -9,6 +9,10 @@
                     <div class="col-sm-8 me-2">
                     <div class="me-5">
                         <a href="<?= base_url('dokter/tambah') ;?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Tambah</a>
+                        <a href="<?= base_url('laporan/data_dokter') ;?>" class="btn btn-primary btn-sm text-light ms-auto mb-2">Cetak Laporan</a>
+
+                    </div>
+                    <div class="me-5 mb-1">
                     </div>
                     </div>
                     <div class="col-lg-3 d-flex ">
@@ -18,7 +22,7 @@
                                 <button type="submit" class="btn btn-outline-secondary btn-dark"><i class="fa fa-search text-light"></i></button>
                             </div>
                         </form>
-                        </div>
+                    </div>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center">
@@ -37,8 +41,11 @@
                                     <td><?= $user['nama_dokter'] ;?></td>
                                     <td><?= $user['spesialis'] ;?></td>
                                     <td>
+                                    <div class="d-flex gap-1 justify-content-center">
+                                    
                                         <a href="<?= base_url().'dokter/edit/'.$user['id_dokter'] ;?>" class="btn btn-warning btn-sm">Edit</a>
                                         <a href="<?= base_url().'dokter/hapus/'.$user['id_dokter'] ; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin?')">Hapus</a>
+                                    </div>
                                     </td>
                                 </tr>
                             <?php $no++; } ?>
@@ -74,3 +81,6 @@
         <?php $no++; } ?>
     </div>
 </div>
+
+
+

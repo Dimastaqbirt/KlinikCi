@@ -7,9 +7,14 @@
             <div class="card-body">
                 <a href="<?= base_url('kunjungan'); ?>" class="btn btn-success btn-sm text-light ms-auto mb-2">Kembali</a>
                 <form action="<?= base_url('kunjungan/insert') ;?>" method="POST">
+                        <?php
+                            $ambil =  $this->session->userdata('username');
+                            $pengguna = $this->db->get_where("users", ["username" => $ambil])->row_array();
+                        ?>
                     <div class="form-group mb-2">
                         <label for="tgl">Tanggal Berobat</label>
                         <input type="date" id="tgl" name="tgl_rekam_medis" class="form-control" required>
+                        <input  type="hidden" name="id" value="<?= $pengguna['id'];?>">
                     </div>
                     <div class="form-group mb-2">
                         <label for="pasien">Nama Pasien</label>
